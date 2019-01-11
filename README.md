@@ -28,3 +28,33 @@ $9$KRbMxNVwYoZU
 root@halacs:/tmp/JunosCrypt# java JuniperPassword 123456789012345678901234567890123456789012345678901234567890
 $9$vvNW7-bs2aGDwsTzn/tp7-dV4aqmf5z3DjCtOBEhwY24UjP5QCp06/Lx7Nbw.PfQ69p0BhylOBdb24ZGp0O1ylevWL7-yr24oJDjp0OIylX7-ds2-dik.mTQEcSe8XdbsaGDY236/A0ObsY2JGDikm5QUDAp0BEhYg4ZHqFn/CuO5T
 ```
+
+## Cross validation
+```
+root@halacs:/tmp/JunosCrypt# java JuniperPassword 1234567890
+$9$cX1yvWX7-w24x7k.fT3nvW8LVwGDiH.P
+root@halacs:/tmp/JunosCrypt# ./junos_decrypt.pl '$9$cX1yvWX7-w24x7k.fT3nvW8LVwGDiH.P'
+```
+
+## Automated cross validation
+```
+root@halacs:/tmp/JunosCrypt# ./test.sh
+Length of random string: 1
+Several random string will be generated with this length! Please wait!
+....................................................................................................
+Length of random string: 2
+Several random string will be generated with this length! Please wait!
+....................................................................................................
+Length of random string: 3
+Several random string will be generated with this length! Please wait!
+....................................................................................................
+Length of random string: 4
+Several random string will be generated with this length! Please wait!
+....................................................................................................
+No mismatch found! :)
+```
+
+# Links
+* https://forums.juniper.net/t5/Junos/Password-encryption-algorithm-in-Junos/td-p/96208 
+* https://www.cpan.org/modules/INSTALL.html
+* https://metacpan.org/pod/Crypt::Juniper
